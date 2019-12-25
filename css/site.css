@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right top, #353639, #444651, #555569, #6a6481, #827399);
+}
+
+.summary {
+  max-width: 600px
+}
+
+.title {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.footer {
+}
