@@ -79,4 +79,11 @@ github: publish
 	git push origin $(GITHUB_PAGES_BRANCH)
 
 
+updateresume:
+	cd resume && xelatex resume.xtx && cd ../ && cp resume/resume.pdf content/assets/
+
+updatesite:
+	pipenv install && pipenv run pelican
+
+
 .PHONY: html help clean regenerate serve serve-global devserver publish github

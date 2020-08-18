@@ -7,4 +7,4 @@ URL:
 I am a full stack software engineer working on [Employee Experience
 ](https://www.qualtrics.com/employee-experience/) at [Qualtrics](https://www.qualtrics.com/).
 Outside of software, I enjoy reading, bouldering, animation, and productivity systems. You can
- find my resume [here](). 
+ find my resume [here](assets/resume.pdf). 

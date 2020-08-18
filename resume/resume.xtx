@@ -1,4 +1,4 @@
-\documentclass[]{deedy-resume-openfont}
+\documentclass[]{deedy-resume}
 
 \begin{document}
 
@@ -30,9 +30,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Links}
-PersonalSite:// \href{https://andrewdang-tran.github.io/}{\custombold{AndrewDang-Tran}} \\
-Github:// \href{https://github.com/AndrewDang-Tran}{\custombold{AndrewDang-Tran}} \\
-LinkedIn://  \href{https://www.linkedin.com/in/andrew-dang-tran-a57144bb}{\custombold{AndrewDang-Tran}} \\
+PersonalSite:// \href{https://andrewdang-tran.github.io/}{\bf AndrewDang-Tran} \\
+Github:// \href{https://github.com/AndrewDang-Tran}{\bf AndrewDang-Tran} \\
+LinkedIn://  \href{https://www.linkedin.com/in/andrew-dang-tran-a57144bb}{\bf AndrewDang-Tran} \\
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -94,8 +94,9 @@ Japanese (intermediate)
 \runsubsection{Qualtrics}
 \descript{| Software Engineer II }
 \location{October 2019 - Present | Seattle, WA}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
-\item some things I did
+\item Collaborating across 4 teams, I was the project lead designing and implementing Qualtrics' platform solution for assigning sentiment to survey choices
 \end{tightemize}
 \sectionsep
 
@@ -103,14 +104,18 @@ Japanese (intermediate)
 \descript{| Software Engineer I }
 \location{July 2017 - October 2019 | Seattle, WA}
 \begin{tightemize}
-\item some things I did 2
+\item Transitioned the Employee Experience dashboards exports from a custom solution to the platform, and found an optimization halving the number of data requests
+\item Implemented 2 widgets for visualizing data utilizing D3 and Angular making up 53\% of widget creation on Employee Experience dashboards
+\item Promoted Jest for API tests which was adopted across the organization and increased the number of API tests in a quarter by 36\% (780 to 1068)
+\item Drives operational improvements of 4+ services through metrics, alerting and oncall
+\item Spread knowledge across the organization with brownbags on ETL in Qualtrics' dataplatform, Dimensional Modeling, and War Games
+\item Worked with Java Spring, Node, Angular, MySQL
 \end{tightemize}
 \sectionsep
 
 \runsubsection{WizeHire}
 \descript{| Software Engineering Intern }
 \location{June 2016 - May 2017 | Austin, TX}
-\vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
 \item Worked on Web Application Team
 \item Constructed an automated reminder to finish applications e-mail increasing completion rate by 10\%
@@ -140,26 +145,5 @@ Japanese (intermediate)
 \end{tightemize}
 \sectionsep
 
-\runsubsection{Scene Graph}
-\location{Fall 2015}
-\begin{tightemize}
-\item Creates a graph representing objects which when traversed displays images in 3-D space
-\item Used the Phong shading model to show lighting on the objects
-\item Linearly interpolated objects over time to create simple animations
-\item Switched from absolute to relatives coordinates to implement an interactive camera
-\item Written in C++ using OpenGL
-\end{tightemize}
-\sectionsep
-
-\runsubsection{Color Runner}
-\location{Fall 2013}
-\begin{tightemize}
-\item Endless 2-D platformer game where the player must match the obstacle's color to progress
-\item Implemented a simple physics engine
-\item Designed levels which would be generated dynamically when the previous level ended
-\item Programmed using LibGDX and Java
-\end{tightemize}
-\sectionsep
-
-\end{minipage} 
+\end{minipage}
 \end{document}  \documentclass[]{article}
