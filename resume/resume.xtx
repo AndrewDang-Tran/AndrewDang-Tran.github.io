@@ -107,9 +107,9 @@ Japanese (intermediate)
 \item Transitioned the Employee Experience dashboards exports from a custom solution to the platform, and found an optimization halving the number of data requests
 \item Implemented 2 widgets for visualizing data utilizing D3 and Angular making up 53\% of widget creation on Employee Experience dashboards
 \item Promoted Jest for API tests which was adopted across the organization and increased the number of API tests in a quarter by 36\% (780 to 1068)
-\item Drives operational improvements of 4+ services through metrics, alerting and oncall
-\item Spread knowledge across the organization with brownbags on ETL in Qualtrics' dataplatform, Dimensional Modeling, and War Games
-\item Worked with Java Spring, Node, Angular, MySQL
+\item Drives operational improvements of 4+ services through metrics, alerting and on-call
+\item Spread knowledge across the organization with brown bags on ETL in Qualtrics' dataplatform, Dimensional Modeling, and War Games
+\item Worked on the Employee Experience product with Java Spring, Node, Angular, MySQL
 \end{tightemize}
 \sectionsep
 
@@ -117,13 +117,13 @@ Japanese (intermediate)
 \descript{| Software Engineering Intern }
 \location{June 2016 - May 2017 | Austin, TX}
 \begin{tightemize}
-\item Worked on Web Application Team
+\item
 \item Constructed an automated reminder to finish applications e-mail increasing completion rate by 10\%
 \item Overhauled the mobile application experience improving job seeker conversions by 100\%
 \item Built a custom deployment manager to deploy WizeHire code with a single button click
 \item Create an improved UI/UX experience for posting jobs, allowing drafts, and editing
 \item Created a fail-safe mechanism which prevented entries with missing fields to be inserted into the MySQL database
-\item Worked with Linux, Nginx, and MySQL
+\item Worked on web application team with Linux, Nginx, and MySQL
 \end{tightemize}
 \sectionsep
 
