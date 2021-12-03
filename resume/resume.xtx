@@ -97,6 +97,7 @@ Japanese (intermediate)
 \vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
 \item Collaborating across 4 teams, I was the project lead designing and implementing Qualtrics' platform solution for assigning sentiment to survey choices
+\item Designed and delivered the dynamic benchmark product feature allowing dashboard users to compare data across languages
 \end{tightemize}
 \sectionsep
 
