@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.8.27)  3 DEC 2021 11:27
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.8.27)  17 DEC 2021 12:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -773,12 +773,12 @@ LaTeX Font Warning: Font shape `TU/HeitiTCMedium(0)/m/sc' undefined
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `resume.out' has not changed.
-(rerunfilecheck)             Checksum: 9CF5EAAA6880288CA1C67FBDA60EE0A5;1303.
+(rerunfilecheck)             Checksum: 38A6956CF2DF89676A634714644E9508;1313.
  ) 
 Here is how much of TeX's memory you used:
  15768 strings out of 476919
  286609 string characters out of 5821840
- 668195 words of memory out of 5000000
+ 668205 words of memory out of 5000000
  35498 multiletter control sequences out of 15000+600000
  404318 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

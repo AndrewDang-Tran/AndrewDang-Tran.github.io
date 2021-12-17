@@ -60,11 +60,11 @@ Android Mobile Computing \\
 
 \section{Skills}
 \subsection{Programming Languages}
-Java \textbullet{} Javascript \textbullet{} \textbullet{} Python \textbullet{} PHP \textbullet{} HTML \textbullet{} CSS \textbullet{} C++ \\
+Java \textbullet{} Javascript \textbullet{} Python \textbullet{} HTML \textbullet{} CSS \textbullet{} C++ \\
 \sectionsep
 
-\subsection{Frameworks}
-Java Spring \textbullet{} Node \textbullet{} Angular \\
+\subsection{Technologies}
+Java Spring \textbullet{} Django \textbullet{} Node \textbullet{} React \textbullet{} Angular \\
 \sectionsep
 
 \subsection{Tooling}
@@ -98,6 +98,7 @@ Japanese (intermediate)
 \begin{tightemize}
 \item Collaborating across 4 teams, I was the project lead designing and implementing Qualtrics' platform solution for assigning sentiment to survey choices
 \item Designed and delivered the dynamic benchmark product feature allowing dashboard users to compare data across their organization
+\item Modeled complex employee engagement use cases, data, and API for Qualtrics' survey invitation link creation and authentication service
 \end{tightemize}
 \sectionsep
 
@@ -133,15 +134,14 @@ Japanese (intermediate)
 
 \section{Projects}
 
-\runsubsection{SWEcune}
-\location{Spring 2016}
+\runsubsection{Perfect Input}
+\location{Winter 2021}
 \begin{tightemize}
-\item Provides information about all Pokemon, types, and learnable moves
-\item Dynamically populates pages with information retrieved from a RESTful API
-\item Implemented a RESTful API that retrieves data from a MySQL database using SQLAlchemy
-\item Implemented the types page that provided information about possible Pokemon Types found in the Pokemon games
-\item Source Code: \href{https://github.com/SThakkar14/cs373-idb}{https://github.com/SThakkar14/cs373-idb}
-\item Developed in a group of six using Python, MySQL, and React
+\item Web application which parses Japanese with MeCab and the UniDic dictionary from PDF and text sources
+\item Compares Japanese language learning input to current knowledge of the language 
+\item Dynamically populate pages with information retrieved utilizing Django REST Framework
+\item Visualizes a network graph of related Japanese morphemes with community analysis
+\item Developed using Django, PostgreSQL, and React
 \end{tightemize}
 \sectionsep
 
