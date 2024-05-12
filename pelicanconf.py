@@ -5,7 +5,7 @@ AUTHOR = 'Andrew Dang-Tran'
 SITENAME = ''
 SITEURL = ''
 
-PATH = 'content'
+PATH = 'content/'
 OUTPUT_PATH = 'docs/'
 
 TIMEZONE = 'PST8PDT'

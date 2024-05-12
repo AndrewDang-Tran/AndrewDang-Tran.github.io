@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Metadata -->
+	<meta name="description" content="">
+	<meta property="og:description" content="">
+	<meta property="og:title" content="Understanding Requirements Based Unit Testing" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="/understanding-requirements-based-unit-testing.html" />
+		<meta property="og:image" content="/assets/avatar.jpg" />
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+		<title></title>
+
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="/theme/css/poole.css" />
+		<link rel="stylesheet" href="/theme/css/hyde.css" />
+		<link rel="stylesheet" href="/theme/css/syntax.css" />
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" crossorigin="anonymous">
+
+		<!-- Feeds -->
+
+		<!-- Analytics -->
+	</head>
+
+	<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="/">
+					<img class="profile-picture" src="/assets/avatar.jpg">
+					
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"> </p>
+			<p></p>
+		</div>
+			<ul class="sidebar-nav">
+					<li><a href="/pages/blog.html">Blog</a></li>
+					<li><a href="/">Andrew Dang-Tran</a></li>
+			</ul>
+		<nav class="sidebar-social">
+					<a class="sidebar-social-item" href="mailto:andrewdt1506@gmail.com">
+						<i class="fa fa-envelope"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://www.linkedin.com/in/andrew-dang-tran-a57144bb/" target="_blank">
+						<i class="fa fa-linkedin"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://github.com/AndrewDang-Tran" target="_blank">
+						<i class="fa fa-github"></i>
+					</a>
+			<a class="sidebar-social-item" href="/">
+				<i class="fa fa-rss"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">Understanding Requirements Based Unit Testing</h1>
+	<span class="post-date">Sun 21 January 2024</span>
+	<p>Our team was unit testing business logic but it was difficult to maintain. The function originally had 4 inputs and 24 tests. A new requirement added 2 new inputs which led to 96 tests with the current testing strategy. The team wanted to improve the maintainability for future changes.</p>
+<p>The function looked like below<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> and due to the encoded business logic, the team had a reasonable expectation the function would continue adding inputs. </p>
+<div class="highlight"><pre><span></span><code><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">domain of a, b, c, d, e = {0, 1}</span>
+<span class="sd">domain of f = {0, .5, 1}</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="k">def</span> <span class="nf">function_with_unmaintainable_tests</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+   <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="k">return</span> <span class="mi">1</span>
+   <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> 
+      <span class="k">return</span> <span class="mi">1</span>
+   <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="k">return</span> <span class="mi">1</span>
+   <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="k">return</span> <span class="mi">1</span>
+   <span class="k">if</span> <span class="n">e</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="k">return</span> <span class="mi">1</span>
+   <span class="k">return</span> <span class="n">generic_logic</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Due to the function's discrete input domain, the test clarified a tension between comprehensiveness and maintainability for me. The team originally used a <strong>comprehensive testing strategy</strong><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>. A comprehensive testing strategy verifies the domain of all possible inputs. I've primarily used this approach for ideating unit tests in the past, leading to spending 10x the time on tests after implementing a change. That being said, comprehensive testing is a valid testing approach for many scenarios. It's useful for fixed utility functions or when an input domain has many discrete edge cases. For business logic the team expected to change, it burdened velocity<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<p>The team originally enumerated every possible case occurring in the system, but which subset of tests verified the important uses of the function?</p>
+<p>To understand which tests are important, put the function in the business context<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. I've heard the method called <strong>requirements based testing</strong> but this situation clarified the concept.</p>
+<div class="highlight"><pre><span></span><code><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">domain of override 1-5 = {0, 1}</span>
+<span class="sd">domain of permissions = {0, .5, 1}</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="k">def</span> <span class="nf">authorize</span><span class="p">(</span><span class="n">override1</span><span class="p">,</span> <span class="n">override2</span><span class="p">,</span> <span class="n">override3</span><span class="p">,</span> <span class="n">override4</span><span class="p">,</span> <span class="n">override5</span><span class="p">,</span> <span class="n">permissions</span><span class="p">):</span>
+   <span class="k">if</span> <span class="n">override1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="k">return</span> <span class="mi">1</span>
+   <span class="k">if</span> <span class="n">override2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> 
+      <span class="k">return</span> <span class="mi">1</span>
+   <span class="k">if</span> <span class="n">override3</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="k">return</span> <span class="mi">1</span>
+   <span class="k">if</span> <span class="n">override4</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="k">return</span> <span class="mi">1</span>
+   <span class="k">if</span> <span class="n">override5</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> 
+      <span class="k">return</span> <span class="mi">1</span>
+   <span class="k">return</span> <span class="n">authorization_logic</span><span class="p">(</span><span class="n">permissions</span><span class="p">)</span>
+</code></pre></div>
+
+<p>With the function within the context of authorizing an entity, the business only cares when it overrides their permissions or applying the <code>authorization_logic</code> logic. Mapping to inputs and tests, the only tests we care about have these inputs.</p>
+<ul>
+<li><code>(override1 = 1 XOR override2 = 1 XOR override3 = 1 XOR override4 = 1 XOR override5 = 1) AND authorization_logic() != 1</code> which tests overrides<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></li>
+<li><code>override1 = 0 AND override2 = 0 AND override3 = 0 AND override4 = 0 AND override5 = 0</code> which tests the general authorization logic</li>
+</ul>
+<p>![[unit_test_business_requirements 4.png]]</p>
+<p>Applying the requirements based testing strategy cut the total tests from 96 to 8. One can assert the existing unit tests would not catch a bug involving two interacting overrides returning 0. They'd be right! but thinking of the code needed to generate the situation, it's unlikely to happen without being caught in code review.  For that small risk our team becomes more nimble. Any additional inputs would be a few test and I still have confidence the business use cases will work. For unit testing changing business logic, requirements based testing filters the domain of inputs to business critical inputs trading comprehensiveness for maintainability.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p>The function wasn't actually written in python and we had reasoning for the existing types and allowing values which were not important. The code base also has other discrete value input functions encoding business logic. Solving the maintainability problem would have implications across a large percentage of the code.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Google doesn't actually have 5 overrides for authorization. I can't go into too much detail because the real business logic is confidential but I hope the summary gets the point across.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>A teammate maintained a script which generated all the permutations of the test to continue comprehensive testing.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Because of the context of each override we know that the overrides will rarely interact. Thus XOR instead of OR.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>While writing this blog post, I realized that it's actually only a comprehensive correctness test strategy. We could have also verified the function ran under 1ms or it produced no side effects. We already filtered some tests implicitly deemed not important.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</div>
+		</div>
+	</body>
+</html>
