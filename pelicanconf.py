@@ -19,6 +19,9 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+FEED_RSS = 'feeds/native.rss.xml'
+FEED_ALL_RSS = 'feeds/all.rss.xml'
+
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),

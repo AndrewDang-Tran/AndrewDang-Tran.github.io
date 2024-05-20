@@ -88,7 +88,7 @@
 &lt;li&gt;&lt;code&gt;(override1 = 1 XOR override2 = 1 XOR override3 = 1 XOR override4 = 1 XOR override5 = 1) AND authorization_logic() != 1&lt;/code&gt; which tests overrides&lt;sup id="fnref:4"&gt;&lt;a class="footnote-ref" href="#fn:4"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;override1 = 0 AND override2 = 0 AND override3 = 0 AND override4 = 0 AND override5 = 0&lt;/code&gt; which tests the general authorization logic&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;![[unit_test_business_requirements 4.png]]&lt;/p&gt;
+&lt;p&gt;&lt;img alt="unit_test_business_requirements_4.png" src="assets/unit_test_business_requirements_4.png"&gt;&lt;/p&gt;
 &lt;p&gt;Applying the requirements based testing strategy cut the total tests from 96 to 8. One can assert the existing unit tests would not catch a bug involving two interacting overrides returning 0. They'd be right! but thinking of the code needed to generate the situation, it's unlikely to happen without being caught in code review.  For that small risk our team becomes more nimble. Any additional inputs would be a few test and I still have confidence the business use cases will work. For unit testing changing business logic, requirements based testing filters the domain of inputs to business critical inputs trading comprehensiveness for maintainability.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr&gt;
