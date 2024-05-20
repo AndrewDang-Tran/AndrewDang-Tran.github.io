@@ -54,7 +54,7 @@ With the function within the context of authorizing an entity, the business only
 - `(override1 = 1 XOR override2 = 1 XOR override3 = 1 XOR override4 = 1 XOR override5 = 1) AND authorization_logic() != 1` which tests overrides[^4]
 - `override1 = 0 AND override2 = 0 AND override3 = 0 AND override4 = 0 AND override5 = 0` which tests the general authorization logic
 
-![[unit_test_business_requirements 4.png]]
+![unit_test_business_requirements_4.png](assets/unit_test_business_requirements_4.png)
 
 Applying the requirements based testing strategy cut the total tests from 96 to 8. One can assert the existing unit tests would not catch a bug involving two interacting overrides returning 0. They'd be right! but thinking of the code needed to generate the situation, it's unlikely to happen without being caught in code review.  For that small risk our team becomes more nimble. Any additional inputs would be a few test and I still have confidence the business use cases will work. For unit testing changing business logic, requirements based testing filters the domain of inputs to business critical inputs trading comprehensiveness for maintainability.
 
