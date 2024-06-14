@@ -28,6 +28,8 @@
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" crossorigin="anonymous">
 
 		<!-- Feeds -->
+<link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title=" Full RSS Feed" />
+<link href="/feeds/native.rss.xml" type="application/rss+xml" rel="alternate" title=" RSS Feed" />
 
 		<!-- Analytics -->
 	</head>
@@ -61,7 +63,7 @@
 					<a class="sidebar-social-item" href="https://github.com/AndrewDang-Tran" target="_blank">
 						<i class="fa fa-github"></i>
 					</a>
-			<a class="sidebar-social-item" href="/">
+			<a class="sidebar-social-item" href="/feeds/all.rss.xml">
 				<i class="fa fa-rss"></i>
 			</a>
 		</nav>
@@ -116,7 +118,7 @@
 <li><code>(override1 = 1 XOR override2 = 1 XOR override3 = 1 XOR override4 = 1 XOR override5 = 1) AND authorization_logic() != 1</code> which tests overrides<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></li>
 <li><code>override1 = 0 AND override2 = 0 AND override3 = 0 AND override4 = 0 AND override5 = 0</code> which tests the general authorization logic</li>
 </ul>
-<p>![[unit_test_business_requirements 4.png]]</p>
+<p><img alt="unit_test_business_requirements_4.png" src="assets/unit_test_business_requirements_4.png"></p>
 <p>Applying the requirements based testing strategy cut the total tests from 96 to 8. One can assert the existing unit tests would not catch a bug involving two interacting overrides returning 0. They'd be right! but thinking of the code needed to generate the situation, it's unlikely to happen without being caught in code review.  For that small risk our team becomes more nimble. Any additional inputs would be a few test and I still have confidence the business use cases will work. For unit testing changing business logic, requirements based testing filters the domain of inputs to business critical inputs trading comprehensiveness for maintainability.</p>
 <div class="footnote">
 <hr>
