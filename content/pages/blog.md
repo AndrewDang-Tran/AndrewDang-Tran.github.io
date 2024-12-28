@@ -1,6 +1,8 @@
 Title: Blog
 Author: Andrew Dang-Tran
 
+12/24 [Japanese Slang: 無敵の人]({filename}/blog/japanese_slang:_無敵の人.md)
+
 11/24 [Framework for Actionable Resume Feedback]({filename}/blog/framework_for_actionable_resume_feedback.md)
 
 03/24 [5000 hours of Dota 2 - A Lesson Learned from Wasted Time]({filename}/blog/5000_hours_of_dota_2_-_a_lesson_learned_from_wasted_time.md)
