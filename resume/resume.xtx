@@ -2,7 +2,7 @@
 
 \begin{document}
 
-\namesection{Andrew}{Dang-Tran}{ 
+\namesection{Andrew}{Dang-Tran}{
 \href{mailto:andrewdt1506@gmail.com}{andrewdt1506@gmail.com} | 817-891-0731
 }
 
@@ -12,17 +12,17 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{minipage}[t]{0.33\textwidth} 
+\begin{minipage}[t]{0.33\textwidth}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     EDUCATION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Education} 
+\section{Education}
 
 \subsection{University of Texas\\ at Austin}
 \descript{Bachelor of Science in Computer Science}
-\location{May 2017 | Austin, TX \\ Major GPA: 3.5/4.0}
+\location{May 2017}
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -36,35 +36,16 @@ LinkedIn://  \href{https://www.linkedin.com/in/andrew-dang-tran-a57144bb}{\bf An
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     COURSEWORK
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Coursework}
-\subsection{Undergraduate}
-Intro to Programming \\
-Data Structures \\
-Computer Architecture \\
-Object-Oriented Programming \\
-Operating Systems \\
-Discrete Mathematics \\
-Algorithms \& Complexity \\
-Computer Graphics \\
-Software Engineering \\
-Programming Correctness \& Efficiency \\
-Android Mobile Computing \\
-\sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     SKILLS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Skills}
 \subsection{Programming Languages}
-Java \textbullet{} Javascript \textbullet{} Python \textbullet{} HTML \textbullet{} CSS \textbullet{} C++ \\
+Java \textbullet{} Javascript \textbullet{} Python \textbullet{} HTML \textbullet{} CSS \textbullet{} Rust \textbullet{} SQL \\
 \sectionsep
 
 \subsection{Technologies}
-Java Spring \textbullet{} Django \textbullet{} Node \textbullet{} React \textbullet{} Angular \\
+Java Spring \textbullet{} Django \textbullet{} Node \textbullet{} Angular \\
 \sectionsep
 
 \subsection{Tooling}
@@ -81,9 +62,9 @@ Japanese (intermediate)
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\end{minipage} 
+\end{minipage}
 \hfill
-\begin{minipage}[t]{0.66\textwidth} 
+\begin{minipage}[t]{0.66\textwidth}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     EXPERIENCE
@@ -91,12 +72,34 @@ Japanese (intermediate)
 
 \section{Experience}
 
+\runsubsection{Google}
+\descript{| Senior Software Engineer }
+\location{April 2024 - Now | Seattle, WA}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Transformed Google Workspace for Education counter abuse response from manual escalations to an automated scaled response through building a customer classification platform
+\item Ideated, proposed and implemented classification heuristics enabling 100k+ customer suspensions with less than 1\% false positive rate
+\item Aligned low cost collaboration interfaces across product organizations and Support, Privacy, and Legal teams
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Google}
+\descript{| Software Engineer III }
+\location{Jun 2022 - April 2024 | Seattle, WA}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Designed and implemented Google Workspace for Education false positive suspension detection to prevent loss of over \$10 million in annual revenue and over 3 million monthly active users
+\item Implemented dynamic product limits preventing 100 million abusive users a year from being created
+\item Managed urgent abuse incidents costing up to \$9 million a year
+\end{tightemize}
+\sectionsep
+
 \runsubsection{Qualtrics}
 \descript{| Software Engineer II }
 \location{October 2019 - August 2021 | Seattle, WA}
 \vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
-\item Collaborating across 4 teams, I was the project lead designing and implementing Qualtrics' platform solution for assigning sentiment to survey choices
+\item Collaborating across 4 teams, I led designing and implementing Qualtrics' platform solution for assigning sentiment to survey choices
 \item Designed and delivered the dynamic benchmark product feature allowing dashboard users to compare data across their organization
 \item Modeled complex employee engagement use cases, data, and API for Qualtrics' survey invitation link creation and authentication service
 \end{tightemize}
@@ -106,12 +109,10 @@ Japanese (intermediate)
 \descript{| Software Engineer I }
 \location{July 2017 - October 2019 | Seattle, WA}
 \begin{tightemize}
-\item Transitioned the Employee Experience dashboards exports from a custom solution to the platform, and found an optimization halving the number of data requests
+\item Migrated Employee Experience dashboards PDF exports from a custom solution to a platform, and found an optimization halving the number of data requests
 \item Implemented 2 widgets for visualizing data utilizing D3 and Angular making up 53\% of widget creation on Employee Experience dashboards
-\item Promoted Jest for API tests which was adopted across the organization and increased the number of API tests in a quarter by 36\% (780 to 1068)
-\item Drives operational improvements of 4+ services through metrics, alerting and on-call
-\item Spread knowledge across the organization with brown bags on ETL in Qualtrics' dataplatform, Dimensional Modeling, and War Games
-\item Worked on the Employee Experience product with Java Spring, Node, Angular, MySQL
+\item Proposed Jest API tests adopted across the organization increasing the number of API tests in a quarter by 36\% (780 to 1068)
+\item Drive operational improvements of 4+ services through metrics, alerting and on-call
 \end{tightemize}
 \sectionsep
 
@@ -121,27 +122,6 @@ Japanese (intermediate)
 \begin{tightemize}
 \item Constructed an automated reminder to finish applications e-mail increasing completion rate by 10\%
 \item Overhauled the mobile application experience improving job seeker conversions by 100\%
-\item Built a custom deployment manager to deploy WizeHire code with a single button click
-\item Create an improved UI/UX experience for posting jobs, allowing drafts, and editing
-\item Created a fail-safe mechanism which prevented entries with missing fields to be inserted into the MySQL database
-\item Worked on web application team with Linux, Nginx, and MySQL
-\end{tightemize}
-\sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Projects
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Projects}
-
-\runsubsection{Perfect Input}
-\location{Winter 2021}
-\begin{tightemize}
-\item Web application which parses Japanese with MeCab and the UniDic dictionary from PDF and text sources
-\item Compares Japanese language learning input to current knowledge of the language 
-\item Dynamically populate pages with information retrieved utilizing Django REST Framework
-\item Visualizes a network graph of related Japanese morphemes with community analysis
-\item Developed using Django, PostgreSQL, and React
 \end{tightemize}
 \sectionsep
 
