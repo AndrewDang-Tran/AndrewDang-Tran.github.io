@@ -41,6 +41,6 @@ DEFAULT_PAGINATION = 10
 GITHUB_URL = 'https://github.com/AndrewDang-Tran'
 
 # Specify name of a built-in theme and other theme stuff
-THEME = '/Users/andrewdt/workspace/pelican-themes/pelican-hyde'
+THEME = 'pelican-hyde'
 STATIC_PATHS = ['assets']
 PROFILE_IMAGE = 'assets/avatar.jpg'
